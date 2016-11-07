@@ -20,7 +20,7 @@ function updateByGeo (lat, lon) {
 function sendRequest(url){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
       var data = JSON.parse(xmlhttp.responseText);
       //var iconSrc = "http://api.openweathermap.org/img/w/" + icon + ".png";
       var weather = {};
@@ -60,15 +60,21 @@ window.onload = function() {
   humidity = document.getElementById("humidity");
   wind = document.getElementById("wind");
   descr = document.getElementById("description");
-  //iconSrc = document.getElementById("icon").src;
-  //var iconSrc = "http://api.openweathermap.org/img/w/" + icon + ".png";
+    
+    //
+  iconSrc = document.getElementById("icon").src;
+  var iconSrc = "http://api.openweathermap.org/img/w/" + icon + ".png";
   //$("#icon").prepend('<img src = "' + iconSrc +'" >');
-// if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(showPosition);
-// }
-  // else {
+ if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(showPosition);
+ }
+   else {
     var city = window.prompt("What is your city?");
   getByCity(city);
-// }
+ }
 }
     //getWeather(weather);
+function getAnotherLoc() {
+    var city = window.prompt("What place would you like to check?");
+  getByCity(city);
+}

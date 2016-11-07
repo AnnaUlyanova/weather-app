@@ -9,7 +9,7 @@ body {
 .container {
   background-color: rgba(174, 202, 224, 0.46);
   font-family: 'Quattrocento', serif;
-  width: 70%;
+  width: 80%;
   height: 100%;
   margin-top: 5%;
   margin-bottom: 20px;
@@ -20,6 +20,7 @@ body {
 #location {
   font-size: 3em;
   font-weight: bolder;
+    text-align: center;
 }
 #description {
   font-style: italic;
@@ -31,6 +32,13 @@ body {
 .icon, .description {
   display: inline-block;
   padding: 20px;
+}
+#check-another-loc {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#check-another-loc:hover{
+    color: white;
 }
 footer {
   margin: auto 0;
